@@ -3,7 +3,7 @@ import pandas as pd
 
 # Read the data from the URL
 url = r"https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_Zip_History.csv"
-df = pd.read_csv(url)
+df = pd.read_csv(url,low_memory=False)
 
 # Extract year and month from the 'month_date_yyyymm' column
 df['year'] = df['month_date_yyyymm'].astype(str).str[:4]
